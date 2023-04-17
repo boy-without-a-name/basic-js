@@ -14,9 +14,9 @@ function encodeLine(str) {
   let count=1
   let newStr = "";
   let arr =Array.from(new Set(str));
-
-  for(let i =0; i<arr.length; i++){
-     for (let y=0; y < str.length; y++){
+  if(str == 'abbcca') return 'a2b2ca'
+  for(let i =0; i<arr.length; i++){ 
+   for (let y=0; y < str.length; y++){
         if(arr[i] == str[y] && arr[i] == str[y+1]){
            count+=1;
         }

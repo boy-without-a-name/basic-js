@@ -45,4 +45,31 @@ function sortByHeight(arr) {
    }return arr.reverse();
 }
 let arr = [-1, 150, 190, 170, -1, -1, 160, 180]
-console.log(sortByHeight(arr))
+// console.log(sortByHeight(arr))
+
+function getCommonCharacterCount(s1, s2) {
+
+   let res = []
+   for(let i = 0;i<s1.length;i++){
+     if(res.includes(s1[i])){
+         continue
+     }
+     for(let j = 0;j<s2.length;j++){
+      if(s1[i]==s2[j] || !res.includes(s2[j])){
+         res.push(s1[i])
+         
+      }
+      if(!res.includes(s2[j])){
+         res.push(s2[j])
+         break
+      }
+     }
+   }
+   return new Set(res).size
+ }
+
+// for(let key of "aabcc"){
+//    console.log(key)
+//    if(key == '') break
+// }
+ console.log(getCommonCharacterCount('aabcc', 'adcaa'))
